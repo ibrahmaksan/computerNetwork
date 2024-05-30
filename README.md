@@ -1,2 +1,1 @@
-# computerNetwork
-bilgisayar aglari donem projesi
+# Bilgisayar Ağları Dönem Projesi
