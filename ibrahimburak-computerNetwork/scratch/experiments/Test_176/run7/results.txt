@@ -1,0 +1,2 @@
+Paket gonderim basarim orani : %93.892
+Gecikme ortalamasi : paket basina 0.246092 milliseconds gecikme yasanmaktadir.

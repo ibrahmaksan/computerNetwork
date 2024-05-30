@@ -1,0 +1,22 @@
+SCRİPT : 
+script="scratch/ibrahimburak"
+
+nDevices=176 	# node sayisi ayni zamanda end device sayisi
+initialAppPeriodSeconds=10
+folder="scratch/experiments/Test_${nDevices}/run"
+
+echo -n "Running experiments: "
+
+for r in `seq 1 10`; do
+
+  appPeriodSeconds=$((initialAppPeriodSeconds + 5 * (r - 1))) # her bir dongude appperiod artacak ve data-rate oraninin degisimi gozlenecek.
+
+  echo -n " $r"
+
+  mkdir -p $folder${r}
+
+  ./ns3 run "$script --RngRun=$r --nDevices=$nDevices --appPeriodSeconds=$appPeriodSeconds --OutputFolder=${folder}${r}" > "$folder${r}/log.txt" 2>&1
+
+done
+
+echo " END"
